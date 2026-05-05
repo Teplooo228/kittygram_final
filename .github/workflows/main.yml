@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 env:
-  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-  DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
   TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
   TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
 
@@ -73,7 +73,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ env.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ env.DOCKER_HUB_PASSWORD }}
 
       - name: Build and push backend image
         uses: docker/build-push-action@v6
