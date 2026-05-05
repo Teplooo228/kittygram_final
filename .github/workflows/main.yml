@@ -8,6 +8,7 @@ on:
 
 env:
   DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+  DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
   TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
   TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
 
